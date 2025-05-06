@@ -94,18 +94,19 @@ function updateQty(name, delta) {
       alert(" Name is required to proceed with checkout.");
       return;
     }
-  
+
+
+    const dine = prompt("🍽️ Choose meal method:\n1. Dine-in\n2. Take-out", "1");
+    if (!dine || !["1", "2"].includes(dine)) {
+      alert(" Invalid meal method. Please try again.");
+      return;
+    }
     const payment = prompt("💳 Choose payment method:\n1. 📲 GCash\n2. 💳 Bank\n3. 💵 Cash", "1");
     if (!payment || !["1", "2", "3"].includes(payment)) {
       alert(" Invalid payment method. Please try again.");
       return;
     }
   
-    const dine = prompt("🍽️ Choose meal method:\n1. Dine-in\n2. Take-out", "1");
-    if (!dine || !["1", "2"].includes(dine)) {
-      alert(" Invalid meal method. Please try again.");
-      return;
-    }
   
     const paymentMethods = {
       "1": "📲 GCash",
